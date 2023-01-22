@@ -9,8 +9,8 @@ test('Elementor_Change_screenshots', async ({ page }) => {
   await page.screenshot({path: 'current.png'});
   //Log in 
   await page.goto('https://regression-test.elementor.cloud/wp-admin/');
-  await page.fill('input[id="user_login"]', 'automation-senior');
-  await page.fill('input[id="user_pass]','GoodLuck100:)');
+  await page.fill('#user_login', 'automation-senior');
+  await page.fill('#user_pass','GoodLuck100:)');
   //Go to change page
   await page.goto('https://regression-test.elementor.cloud/?elementor');
   await page.evaluate(() => {
@@ -18,7 +18,7 @@ test('Elementor_Change_screenshots', async ({ page }) => {
       container: elementor.getPreviewContainer(),
       settings: { custom_css: '#main h1{font-size: 100px}' }
       });
-       $e.run( 'document/save/default' );
+       $e.run('document/save/default');
   });
   await page.goto('https://regression-test.elementor.cloud/');
   await page.screenshot({path: 'reference.png'});
