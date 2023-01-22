@@ -24,7 +24,6 @@ test('Elementor_Change_screenshots', async ({ page }) => {
   await page.goto('https://regression-test.elementor.cloud/');
   await page.screenshot({path: 'reference.png'});
  //Compare screenshots and create 3 screenshots witch shows the difference.
- const { compareScreenshot } = require('playwright');
   const result = await compareScreenshot('current.png', 'reference.png', 'diff.png');
   
   //Clean up the changes
