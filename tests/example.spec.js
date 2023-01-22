@@ -1,6 +1,5 @@
 // @ts-check
 const { test, expect } = require('@playwright/test');
-const { compareScreenshot } = require('playwright');
 
 test('Elementor_Change_screenshots', async ({ page }) => {
   await page.goto('https://regression-test.elementor.cloud/');
