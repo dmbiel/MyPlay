@@ -14,11 +14,7 @@ test('Elementor_Change_screenshots', async ({ page }) => {
   //Go to change page
   await page.goto('https://regression-test.elementor.cloud/?elementor');
   await page.evaluate(() => {
-     $e.run('document/elements/settings', {
-      container: elementor.getPreviewContainer(),
-      settings: { custom_css: '#main h1{font-size: 100px}' }
-      });
-       $e.run('document/save/default');
+     // Evaluate script to make changes on page
   });
   await page.goto('https://regression-test.elementor.cloud/');
   await page.screenshot({path: 'reference.png'});
